@@ -9,7 +9,6 @@ import Button from '@mui/material/Button';
 import styles from '../styles/Home.module.css';
 
 export default function Home() {
-
   const handleSubmit =() => {
     console.log('submitted')
   }
@@ -30,7 +29,7 @@ export default function Home() {
 
         <div className={styles.grid}>
           <div  className={styles.card}>
-            <Box component="form" onSubmit={handleSubmit} noVlidate sx ={{m:1}}>
+            <Box component="form" onSubmit={handleSubmit} noValidate sx ={{m:1}}>
               <TextField 
                 sx ={{mb:1}}
                 marginal="normal"
@@ -39,8 +38,8 @@ export default function Home() {
                 id="email"
                 label="Email Address"
                 name="email"
-                autocomplete="email"
-                autofocus
+                autoComplete="email"
+                autoFocus
               />
               <TextField
                sx ={{mb:1}}
@@ -51,7 +50,7 @@ export default function Home() {
               id="password"
               label="Password"
               type="password"
-              autocomplete="current-password"
+              autoComplete="current-password"
               />
               <Button
               type="submit"
@@ -62,7 +61,7 @@ export default function Home() {
                 Login
               </Button>
             </Box>
-            Don't have an account? <Link href="/register">Click here</Link> to register.
+            Don't have an account? <Link href="/registration">Click here</Link> to register.
           </div>
 
         </div>
