@@ -3,96 +3,65 @@ import Link from 'next/link';
 import { LockOutlined } from '@mui/icons-material';
 import { Avatar } from '@mui/material';
 import Typography from '@mui/material';
-import Grid from '@mui/material/Grid';
 import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import styles from '../styles/Home.module.css';
 
-export default function Registeration() {
+export default function Home() {
   const handleSubmit =() => {
     console.log('submitted')
   }
   return (
     <div className={styles.container}>
-        <Head>
+      <Head>
         <title>Connect</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
       <main>
         <Avatar sx={{m:1, bgcolor:'#9400FF'}}>
           <LockOutlined/>
         </Avatar>
         <h5 className={styles.title}>
-         Sign up 
+         Login 
         </h5>
 
         <div className={styles.grid}>
           <div  className={styles.card}>
-          <Box component="form" onSubmit={handleSubmit} noValidate sx={{ m: 1 }}>
-              <Grid container spacing={2}>
-              <Grid item xs={12} sm={6}>
-                  <TextField
-                    sx={{ mb: 1 }}
-                    marginal="normal"
-                    required
-                    fullWidth
-                    id="firstName"
-                    label="First Name"
-                    name="firstName"
-                    autoComplete="given-name"
-                    autoFocus
-                  />
-                </Grid>
-                <Grid item xs={12} sm={6}>
-                <TextField
-                  sx={{ mb: 1 }}
-                  marginal="normal"
-                  required
-                  fullWidth
-                  name="lastName"
-                  id="lastName"
-                  label="Last Name"
-                  autoComplete="family-name"
-                />
-                </Grid>
-                <Grid item xs={12}>
-                  <TextField
-                    sx={{ mb: 1 }}
-                    marginal="normal"
-                    required
-                    fullWidth
-                    id="email"
-                    label="Email Address"
-                    name="email"
-                    autoComplete="email"
-                  />
-                </Grid>
-                <Grid item xs={12}>
-                <TextField
-                  sx={{ mb: 1 }}
-                  marginal="normal"
-                  required
-                  fullWidth
-                  name="password"
-                  id="password"
-                  label="Password"
-                  type="password"
-                  autoComplete="current-password"
-                />
-                </Grid>
-              </Grid>
-              <Button
-                type="submit"
+            <Box component="form" onSubmit={handleSubmit} noValidate sx ={{m:1}}>
+              <TextField 
+                sx ={{mb:1}}
+                marginal="normal"
+                required
                 fullWidth
-                variant="contained"
-                sx={{ mt: 2, mb: 2 }}
+                id="email"
+                label="Email Address"
+                name="email"
+                autoComplete="email"
+                autoFocus
+              />
+              <TextField
+               sx ={{mb:1}}
+              marginal="normal"
+              required
+              fullWidth
+              name="password"
+              id="password"
+              label="Password"
+              type="password"
+              autoComplete="current-password"
+              />
+              <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              sx={{mt:2,mb:2}}
               >
                 Login
               </Button>
-
             </Box>
-            Already have an account? <Link href="/">Click here</Link> to Login.
+            Don't have an account? <Link href="/registration">Click here</Link> to register.
           </div>
 
         </div>
